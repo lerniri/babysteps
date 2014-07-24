@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>LIFT SITE</title>
+		<meta name="description" content="">
+		<meta name="author" content="Ira">
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico">
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>	
+		<!-- STYLYING START -->
+		<style>
+			
+			body {
+				height: 150000px;
+			}
+			
+			header {
+				text-align:center;
+			}
+			
+			#pageGrids {
+				list-style-type: none;
+			}
+			
+			#pageGrids li {
+				float:left;
+				text-align:center;	
+			
+			}
+			
+			.backgroundcol {
+				width:25%;
+				background-color:lightgreen;
+				min-height:150000px;
+			}
+			
+			.contentcol {
+				width:50%;
+				margin:auto;
+				background-color:lightblue;
+				min-height:150000px;
+				
+			}
+			
+			#lift {
+				
+				margin:50px auto;
+				height:400px;
+				width:500px;
+				background:grey;
+				position:absolute;
+				left:50%;
+				margin-left:-250px;		
+				text-align:center;
+				font-weight:900;
+				
+			}
+			.Floor {
+				padding-top:10px;
+				height:1900px;
+				
+			}
+			
+			.Floor span {
+				float:right;
+				text-align:right;
+			}
+			
+			.Floor p {
+				width:400px;
+				margin:80px auto;
+				left:50%;
+				margin-left:-200px;
+				position:absolute;
+				text-align:justify;
+			}
+		</style>
+		<!-- STYLYING END -->
+	
+		<!-- SCRIPTING START -->
+		<script>
+			$(document).ready(function() {
+				$("button").click(function(){
+					
+					//get lift 
+					var lift = $(document.getElementById("lift"));
+					var floor = $(document.getElementById(this.value));
+					
+					//get target floor top position
+					var targetTopPosition = floor.position()['top'] -50;
+									
+					//perform lift movement
+					
+					$('html, body').animate({
+                        scrollTop: targetTopPosition
+                    }, 2000);
+					lift.animate({top: targetTopPosition}, 2000);
+				});
+				
+				/*
+				$(window).scroll(function(){
+					
+					alert('Are you NUTS??!!! Use lift!');
+					
+				});
+				*/
+				
+			});
+		</script>
+			
+			
+	
+		<!-- SCRIPTING END -->
+	
+	
+	</head>
+
+	<body>
+		<header>
+			<h1>LIFT SITE</h1>
+		</header>
+		<div id='lift'>
+			I AM LIFT
+			<nav>
+					<button value='Floor0'>0 floor</button>
+					<button value='Floor1'>1st floor</button>
+					<button value='Floor2'>2dn floor</button>
+					<button value='Floor3'>3rd floor</button>
+					<button value='Floor4'>4th floor</button>
+					<button value='Floor5'>5th floor</button>
+				</nav>
+		</div>
+		<ul id="pageGrids">
+			<li id="col1" class="backgroundcol">
+				background container
+				
+			</li> 
+			<li id="col2" class="contentcol">
+				lift/content container
+				
+				
+				
+				<div id='Floor0' class='Floor'>
+					<span>FLOOR 0</span>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut molestie elit, non interdum leo. 
+						Proin venenatis, urna ut interdum placerat, felis turpis iaculis diam, ac blandit lorem neque nec massa. 
+						Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi arcu risus, 
+						placerat eu hendrerit et, sodales at elit. Nullam ornare, nibh vitae rutrum sagittis, dui diam iaculis urna, 
+						sit amet rutrum lacus erat nec mauris. Proin hendrerit fermentum mauris condimentum facilisis. In hac habitasse 
+						platea dictumst. Etiam vitae neque tincidunt, tincidunt turpis at, cursus neque. Aliquam mi felis, tempus eget quam 
+						egestas, viverra iaculis libero. Aenean at sapien sit amet magna consequat vehicula. Aliquam euismod tellus lectus, 
+						nec sodales erat pellentesque volutpat.
+						
+					</p>
+				
+				</div>
+				<div id='Floor1' class='Floor'>
+					<span>FLOOR 1</span>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut molestie elit, non interdum leo. 
+						Proin venenatis, urna ut interdum placerat, felis turpis iaculis diam, ac blandit lorem neque nec massa. 
+						Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi arcu risus, 
+						placerat eu hendrerit et, sodales at elit. Nullam ornare, nibh vitae rutrum sagittis, dui diam iaculis urna, 
+						sit amet rutrum lacus erat nec mauris. Proin hendrerit fermentum mauris condimentum facilisis. In hac habitasse 
+						platea dictumst. Etiam vitae neque tincidunt, tincidunt turpis at, cursus neque. Aliquam mi felis, tempus eget quam 
+						egestas, viverra iaculis libero. Aenean at sapien sit amet magna consequat vehicula. Aliquam euismod tellus lectus, 
+						nec sodales erat pellentesque volutpat.
+						
+					</p>
+				</div>
+				<div id='Floor2' class='Floor'>
+					<span>FLOOR 2</span>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut molestie elit, non interdum leo. 
+						Proin venenatis, urna ut interdum placerat, felis turpis iaculis diam, ac blandit lorem neque nec massa. 
+						Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi arcu risus, 
+						placerat eu hendrerit et, sodales at elit. Nullam ornare, nibh vitae rutrum sagittis, dui diam iaculis urna, 
+						sit amet rutrum lacus erat nec mauris. Proin hendrerit fermentum mauris condimentum facilisis. In hac habitasse 
+						platea dictumst. Etiam vitae neque tincidunt, tincidunt turpis at, cursus neque. Aliquam mi felis, tempus eget quam 
+						egestas, viverra iaculis libero. Aenean at sapien sit amet magna consequat vehicula. Aliquam euismod tellus lectus, 
+						nec sodales erat pellentesque volutpat.
+						
+					</p>
+				</div>
+				<div id='Floor3' class='Floor'>
+					<span>FLOOR 3</span>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut molestie elit, non interdum leo. 
+						Proin venenatis, urna ut interdum placerat, felis turpis iaculis diam, ac blandit lorem neque nec massa. 
+						Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi arcu risus, 
+						placerat eu hendrerit et, sodales at elit. Nullam ornare, nibh vitae rutrum sagittis, dui diam iaculis urna, 
+						sit amet rutrum lacus erat nec mauris. Proin hendrerit fermentum mauris condimentum facilisis. In hac habitasse 
+						platea dictumst. Etiam vitae neque tincidunt, tincidunt turpis at, cursus neque. Aliquam mi felis, tempus eget quam 
+						egestas, viverra iaculis libero. Aenean at sapien sit amet magna consequat vehicula. Aliquam euismod tellus lectus, 
+						nec sodales erat pellentesque volutpat.
+						
+					</p>
+				</div>
+				<div id='Floor4' class='Floor'>
+					<span>FLOOR 4</span>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut molestie elit, non interdum leo. 
+						Proin venenatis, urna ut interdum placerat, felis turpis iaculis diam, ac blandit lorem neque nec massa. 
+						Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi arcu risus, 
+						placerat eu hendrerit et, sodales at elit. Nullam ornare, nibh vitae rutrum sagittis, dui diam iaculis urna, 
+						sit amet rutrum lacus erat nec mauris. Proin hendrerit fermentum mauris condimentum facilisis. In hac habitasse 
+						platea dictumst. Etiam vitae neque tincidunt, tincidunt turpis at, cursus neque. Aliquam mi felis, tempus eget quam 
+						egestas, viverra iaculis libero. Aenean at sapien sit amet magna consequat vehicula. Aliquam euismod tellus lectus, 
+						nec sodales erat pellentesque volutpat.
+						
+					</p>
+				</div>
+				<div id='Floor5' class='Floor'>
+					<span>FLOOR 5</span>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ut molestie elit, non interdum leo. 
+						Proin venenatis, urna ut interdum placerat, felis turpis iaculis diam, ac blandit lorem neque nec massa. 
+						Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi arcu risus, 
+						placerat eu hendrerit et, sodales at elit. Nullam ornare, nibh vitae rutrum sagittis, dui diam iaculis urna, 
+						sit amet rutrum lacus erat nec mauris. Proin hendrerit fermentum mauris condimentum facilisis. In hac habitasse 
+						platea dictumst. Etiam vitae neque tincidunt, tincidunt turpis at, cursus neque. Aliquam mi felis, tempus eget quam 
+						egestas, viverra iaculis libero. Aenean at sapien sit amet magna consequat vehicula. Aliquam euismod tellus lectus, 
+						nec sodales erat pellentesque volutpat.
+						
+					</p>
+				</div>
+			</li> 
+			<li id="col3" class="backgroundcol">
+				background container
+				
+			</li> 
+		</ul>
+	
+		
+
+			
+		
+	</body>
+</html>
